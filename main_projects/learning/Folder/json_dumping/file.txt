@@ -1,0 +1,1 @@
+"{\"Linux\": \"Is operation system\", \"OSs\": [\"Ubuntu\", \"Kali\", \"Mint\"], \"Name\": \"idk\", \"Number\": 1990}"

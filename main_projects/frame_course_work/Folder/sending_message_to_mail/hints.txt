@@ -1,0 +1,4 @@
+To set ability for sending messages using SMPT you have to:
+
+1. turn on <less secure app access> in <google security settings>
+url: https://stackoverflow.com/questions/16512592/login-credentials-not-working-with-gmail-smtp

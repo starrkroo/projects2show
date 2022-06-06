@@ -1,0 +1,8 @@
+@property
+def code(self):
+  something
+
+
+def code(self, *args):
+  for k in args:
+      print(k)

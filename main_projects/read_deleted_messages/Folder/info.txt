@@ -1,0 +1,2 @@
+path:
+D:\Learning\previous\from_linux\python_education\get_module_marks

@@ -1,0 +1,22 @@
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+
+.block-to-search {
+    width: 100%;
+	display: flex;
+
+}
+
+.search-users-layout {
+	justify-content: center;
+}
+
+.input {
+	text-align: center;
+}

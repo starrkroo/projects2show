@@ -1,0 +1,25 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+
+    {% if is_searching %}
+        {% if user_data %}
+            Found user <a href="{{ user_data.get_absolute_url }}"> {{user_data.username}}  </a>
+        {% else %}
+            No user found with {{user_query}}
+        {% endif %}
+
+    {% else %}
+        {% if request.user.is_authenticated %}
+        <p>Добро пожаловать, <b>{{request.user.username}}</b> </p>
+        {% if request.user.username != user_data.username %}
+            <i>Here is {{ user_data.username }}'s page</i>
+        {% endif %}
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
