@@ -4,7 +4,7 @@ import math
 
 
 def get_token() -> str:
-    return '1392582115:AAHR69NR7CwM74t5GsayoVhyfT8ZJagWdfo'
+    return ''
 
 def get_students() -> []:
     """
