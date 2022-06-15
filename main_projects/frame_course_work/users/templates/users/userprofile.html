@@ -1,0 +1,69 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+    <div class="main-container">
+        {% if request.user.is_authenticated %}
+
+            <div class="vertical-line-1"></div>
+            <div class="vertical-line-2"></div>
+        
+            <div class="block-to-search">
+                <form method="GET">
+                    <input type="text" placeholder='поиск' class="search-users-layout" name="search-users">
+                </form>
+            </div>
+
+
+            {% if make_a_message %}
+                <form id="post-form" class="post-form" method="POST" action="{% url 'checkview' %}">
+                    {% csrf_token %}
+                    <div class="make-message">
+                        <button class="make-message-button" type="submit">
+                            Написать сообщение
+                        </button>
+                    </div>
+
+                    <div class="user-avatar-preview-block">
+                        <a href="/media/{{avatar_url}}">
+                            <img src="/media/{{avatar_url}}" alt="" class='user-profile-avatar'>
+                        </a>
+                    </div>
+
+                    <div class="show-user-name">
+                        <p>{{user_data.username}}</p>
+                    </div>
+
+                    <input name='user1' value="{{request.user.username}}" type='hidden'>
+                    <input name='user2' value="{{user_data.username}}" type='hidden'>
+                    <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
+                </form>
+            {% else %}
+                <div class="custom-show-useravatar">
+                    <div class="user-avatar-preview-block">
+                        <a href="/media/{{avatar_url}}">
+                            <img src="/media/{{avatar_url}}" alt="" class='user-profile-avatar'>
+                        </a>
+                    </div>
+
+                    <div class="show-user-name">
+                        <div class="show-user-name">
+                            <p>{{user_data.username}}</p>
+                            <a href="{% url 'logout' %}">(Выйти)</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            {%endif%}
+            {% if request.user.username != user_data.username %}
+                <i>Here is {{ user_data.username }}'s page</i>
+            {% endif %}
+
+            <a href="{% url 'logout' %}">Выйти</a>
+
+        {% else %}
+            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+    </div>
+{% endblock %}
