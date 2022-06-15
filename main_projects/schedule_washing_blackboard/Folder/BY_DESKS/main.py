@@ -5,7 +5,7 @@ import telebot
 import datetime
 import schedule
 
-token = '1392582115:AAHR69NR7CwM74t5GsayoVhyfT8ZJagWdfo'
+token = ''
 client = telebot.TeleBot(token)
 
 users = []
